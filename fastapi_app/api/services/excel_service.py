@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from datetime import datetime
 from openpyxl import load_workbook
 
-from database.models import College
+from fastapi_app.database.models import College
 
 REQUIRED_COLUMNS = [
     "name",
