@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from database import models
-from api.schemas.college import CollegeSearchRequest
+from fastapi_app.database import models
+from fastapi_app.api.schemas.college import CollegeSearchRequest
 
 class CollegeService:
     @staticmethod

@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import health, colleges, admin
-from database.database import Base, engine
+from fastapi_app.api.routes import health, colleges, admin
+from fastapi_app.database.database import Base, engine
 
 # Create tables on startup if not exist
 Base.metadata.create_all(bind=engine)

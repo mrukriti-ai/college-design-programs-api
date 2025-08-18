@@ -2,8 +2,8 @@ from fastapi import APIRouter, UploadFile, File, HTTPException, Header, Depends
 from sqlalchemy.orm import Session
 from typing import Optional
 
-from database.database import get_db
-from api.services.excel_service import ExcelImportService
+from fastapi_app.database.database import get_db
+from fastapi_app.api.services.excel_service import ExcelImportService
 
 router = APIRouter()
 
@@ -36,6 +36,6 @@ async def import_colleges_excel(
 @router.get("/colleges/import-status")
 async def import_status(db: Session = Depends(get_db)):
     # Minimal status for MVP – count rows
-    from database.models import College
+    from fastapi_app.database.models import College
     count = db.query(College).count()
     return {"colleges_count": count} 
