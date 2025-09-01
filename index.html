@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeConnect - Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CollegeConnect</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="#courses" class="nav-link" data-section="courses">
+                    <i class="fas fa-book"></i> Courses
+                </a>
+                <a href="#schedule" class="nav-link" data-section="schedule">
+                    <i class="fas fa-calendar"></i> Schedule
+                </a>
+                <a href="#grades" class="nav-link" data-section="grades">
+                    <i class="fas fa-chart-line"></i> Grades
+                </a>
+                <a href="#library" class="nav-link" data-section="library">
+                    <i class="fas fa-university"></i> Library
+                </a>
+                <a href="#campus" class="nav-link" data-section="campus">
+                    <i class="fas fa-map-marker-alt"></i> Campus
+                </a>
+            </div>
+            <div class="nav-profile">
+                <img src="https://via.placeholder.com/40" alt="Profile" class="profile-img">
+                <span class="profile-name">John Doe</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="section-header">
+                <h1>Welcome back, John!</h1>
+                <p>Here's what's happening today</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Quick Stats -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>5</h3>
+                            <p>Active Courses</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>3.8</h3>
+                            <p>GPA</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>2</h3>
+                            <p>Today's Classes</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>4</h3>
+                            <p>Pending Tasks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Schedule -->
+                <div class="schedule-card">
+                    <h2>Today's Schedule</h2>
+                    <div class="schedule-list">
+                        <div class="schedule-item">
+                            <div class="time">09:00 AM</div>
+                            <div class="class-info">
+                                <h4>Computer Science 101</h4>
+                                <p>Room 205 - Prof. Smith</p>
+                            </div>
+                            <div class="status active">Now</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">11:00 AM</div>
+                            <div class="class-info">
+                                <h4>Mathematics 201</h4>
+                                <p>Room 301 - Prof. Johnson</p>
+                            </div>
+                            <div class="status upcoming">Next</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">02:00 PM</div>
+                            <div class="class-info">
+                                <h4>Physics Lab</h4>
+                                <p>Lab 102 - Prof. Davis</p>
+                            </div>
+                            <div class="status">Later</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Grades -->
+                <div class="grades-card">
+                    <h2>Recent Grades</h2>
+                    <div class="grades-list">
+                        <div class="grade-item">
+                            <div class="course">CS 101 - Midterm</div>
+                            <div class="grade">A-</div>
+                        </div>
+                        <div class="grade-item">
+                            <div class="course">Math 201 - Quiz 3</div>
+                            <div class="grade">B+</div>
+                        </div>
+                        <div class="grade-item">
+                            <div class="course">Physics - Lab Report</div>
+                            <div class="grade">A</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="actions-card">
+                    <h2>Quick Actions</h2>
+                    <div class="action-buttons">
+                        <button class="action-btn">
+                            <i class="fas fa-plus"></i>
+                            Register for Classes
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-file-alt"></i>
+                            View Transcript
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-dollar-sign"></i>
+                            Pay Tuition
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-question-circle"></i>
+                            Get Help
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="section">
+            <div class="section-header">
+                <h1>My Courses</h1>
+                <p>Manage your academic journey</p>
+            </div>
+            
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Computer Science 101</h3>
+                        <span class="course-code">CS 101</span>
+                    </div>
+                    <p class="course-description">Introduction to programming and computer science fundamentals</p>
+                    <div class="course-details">
+                        <div class="detail">
+                            <i class="fas fa-user"></i>
+                            <span>Prof. Sarah Smith</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Room 205</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon, Wed, Fri 9:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span>75% Complete</span>
+                    </div>
+                    <div class="course-actions">
+                        <button class="btn-primary">View Materials</button>
+                        <button class="btn-secondary">Assignments</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Mathematics 201</h3>
+                        <span class="course-code">MATH 201</span>
+                    </div>
+                    <p class="course-description">Calculus and advanced mathematical concepts</p>
+                    <div class="course-details">
+                        <div class="detail">
+                            <i class="fas fa-user"></i>
+                            <span>Prof. Michael Johnson</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Room 301</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Tue, Thu 11:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%"></div>
+                        </div>
+                        <span>60% Complete</span>
+                    </div>
+                    <div class="course-actions">
+                        <button class="btn-primary">View Materials</button>
+                        <button class="btn-secondary">Assignments</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Physics Lab</h3>
+                        <span class="course-code">PHYS 101L</span>
+                    </div>
+                    <p class="course-description">Hands-on physics experiments and laboratory work</p>
+                    <div class="course-details">
+                        <div class="detail">
+                            <i class="fas fa-user"></i>
+                            <span>Prof. Emily Davis</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lab 102</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Wed 2:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%"></div>
+                        </div>
+                        <span>45% Complete</span>
+                    </div>
+                    <div class="course-actions">
+                        <button class="btn-primary">View Materials</button>
+                        <button class="btn-secondary">Assignments</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section">
+            <div class="section-header">
+                <h1>Class Schedule</h1>
+                <p>Your weekly timetable</p>
+            </div>
+            
+            <div class="schedule-container">
+                <div class="schedule-header">
+                    <button class="btn-nav" id="prevWeek">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h2>Week of September 15, 2024</h2>
+                    <button class="btn-nav" id="nextWeek">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="schedule-grid">
+                    <div class="time-column">
+                        <div class="time-slot">8:00 AM</div>
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot">4:00 PM</div>
+                    </div>
+                    
+                    <div class="day-column">
+                        <div class="day-header">Monday</div>
+                        <div class="class-slot cs101" data-course="CS 101">
+                            <h4>CS 101</h4>
+                            <p>Room 205</p>
+                        </div>
+                        <div class="class-slot math201" data-course="MATH 201">
+                            <h4>MATH 201</h4>
+                            <p>Room 301</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-column">
+                        <div class="day-header">Tuesday</div>
+                        <div class="class-slot math201" data-course="MATH 201">
+                            <h4>MATH 201</h4>
+                            <p>Room 301</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-column">
+                        <div class="day-header">Wednesday</div>
+                        <div class="class-slot cs101" data-course="CS 101">
+                            <h4>CS 101</h4>
+                            <p>Room 205</p>
+                        </div>
+                        <div class="class-slot physics" data-course="PHYS 101L">
+                            <h4>Physics Lab</h4>
+                            <p>Lab 102</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-column">
+                        <div class="day-header">Thursday</div>
+                        <div class="class-slot math201" data-course="MATH 201">
+                            <h4>MATH 201</h4>
+                            <p>Room 301</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-column">
+                        <div class="day-header">Friday</div>
+                        <div class="class-slot cs101" data-course="CS 101">
+                            <h4>CS 101</h4>
+                            <p>Room 205</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grades Section -->
+        <section id="grades" class="section">
+            <div class="section-header">
+                <h1>Academic Performance</h1>
+                <p>Track your grades and progress</p>
+            </div>
+            
+            <div class="grades-container">
+                <div class="gpa-overview">
+                    <div class="gpa-card">
+                        <h2>Current GPA</h2>
+                        <div class="gpa-score">3.8</div>
+                        <p>Excellent standing</p>
+                    </div>
+                    <div class="gpa-chart">
+                        <canvas id="gpaChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="grades-by-course">
+                    <h2>Grades by Course</h2>
+                    <div class="course-grades">
+                        <div class="course-grade">
+                            <h3>CS 101 - Computer Science</h3>
+                            <div class="grade-breakdown">
+                                <div class="grade-item">
+                                    <span>Midterm Exam</span>
+                                    <span class="grade">A- (92%)</span>
+                                </div>
+                                <div class="grade-item">
+                                    <span>Final Project</span>
+                                    <span class="grade">A (95%)</span>
+                                </div>
+                                <div class="grade-item">
+                                    <span>Participation</span>
+                                    <span class="grade">A (90%)</span>
+                                </div>
+                                <div class="grade-item final">
+                                    <span>Course Grade</span>
+                                    <span class="grade">A- (92.3%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-grade">
+                            <h3>MATH 201 - Calculus</h3>
+                            <div class="grade-breakdown">
+                                <div class="grade-item">
+                                    <span>Quiz 1</span>
+                                    <span class="grade">B+ (87%)</span>
+                                </div>
+                                <div class="grade-item">
+                                    <span>Quiz 2</span>
+                                    <span class="grade">A- (91%)</span>
+                                </div>
+                                <div class="grade-item">
+                                    <span>Quiz 3</span>
+                                    <span class="grade">B+ (88%)</span>
+                                </div>
+                                <div class="grade-item final">
+                                    <span>Course Grade</span>
+                                    <span class="grade">B+ (88.7%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Library Section -->
+        <section id="library" class="section">
+            <div class="section-header">
+                <h1>Library Resources</h1>
+                <p>Access academic materials and research tools</p>
+            </div>
+            
+            <div class="library-container">
+                <div class="search-section">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search books, articles, or resources...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="search-filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Books</button>
+                        <button class="filter-btn">Articles</button>
+                        <button class="filter-btn">Databases</button>
+                    </div>
+                </div>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Course Textbooks</h3>
+                        <p>Access required textbooks for your courses</p>
+                        <button class="btn-primary">Browse</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3>Academic Journals</h3>
+                        <p>Research papers and scholarly articles</p>
+                        <button class="btn-primary">Search</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Research Databases</h3>
+                        <p>Access to premium research databases</p>
+                        <button class="btn-primary">Explore</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Study Rooms</h3>
+                        <p>Reserve quiet study spaces</p>
+                        <button class="btn-primary">Book</button>
+                    </div>
+                </div>
+                
+                <div class="recent-books">
+                    <h2>Recently Accessed</h2>
+                    <div class="book-list">
+                        <div class="book-item">
+                            <img src="https://via.placeholder.com/60x80" alt="Book Cover">
+                            <div class="book-info">
+                                <h4>Introduction to Algorithms</h4>
+                                <p>Thomas H. Cormen</p>
+                                <span class="book-status available">Available</span>
+                            </div>
+                        </div>
+                        <div class="book-item">
+                            <img src="https://via.placeholder.com/60x80" alt="Book Cover">
+                            <div class="book-info">
+                                <h4>Calculus: Early Transcendentals</h4>
+                                <p>James Stewart</p>
+                                <span class="book-status checked-out">Checked Out</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Section -->
+        <section id="campus" class="section">
+            <div class="section-header">
+                <h1>Campus Life</h1>
+                <p>Explore campus facilities and activities</p>
+            </div>
+            
+            <div class="campus-container">
+                <div class="campus-map">
+                    <h2>Campus Map</h2>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p>Interactive Campus Map</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Dining Hall</h3>
+                        <p>Open: 7:00 AM - 10:00 PM</p>
+                        <span class="status open">Open Now</span>
+                    </div>
+                    
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Fitness Center</h3>
+                        <p>Open: 6:00 AM - 11:00 PM</p>
+                        <span class="status open">Open Now</span>
+                    </div>
+                    
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Parking Garage</h3>
+                        <p>24/7 Access</p>
+                        <span class="status open">Open Now</span>
+                    </div>
+                    
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-first-aid"></i>
+                        </div>
+                        <h3>Health Center</h3>
+                        <p>Open: 8:00 AM - 6:00 PM</p>
+                        <span class="status closed">Closed</span>
+                    </div>
+                </div>
+                
+                <div class="events-section">
+                    <h2>Upcoming Events</h2>
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">20</span>
+                                <span class="month">SEP</span>
+                            </div>
+                            <div class="event-info">
+                                <h4>Career Fair 2024</h4>
+                                <p>Meet top employers and explore career opportunities</p>
+                                <span class="event-time">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <button class="btn-secondary">Register</button>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">25</span>
+                                <span class="month">SEP</span>
+                            </div>
+                            <div class="event-info">
+                                <h4>Homecoming Week</h4>
+                                <p>Celebrate school spirit with various activities</p>
+                                <span class="event-time">All Week</span>
+                            </div>
+                            <button class="btn-secondary">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
