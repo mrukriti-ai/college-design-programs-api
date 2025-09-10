@@ -2,8 +2,8 @@ from fastapi import APIRouter, UploadFile, File, HTTPException, Header, Depends
 from sqlalchemy.orm import Session
 from typing import Optional
 
-from fastapi_app.database.database import get_db
-from fastapi_app.api.services.excel_service import ExcelImportService
+from database.database import get_db
+from api.services.excel_service import ExcelImportService
 
 router = APIRouter()
 
