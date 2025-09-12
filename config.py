@@ -42,7 +42,7 @@ def load_config() -> Dict[str, Any]:
     
     config = {
         # API Configuration
-        'api_base_url': os.getenv('API_BASE_URL', 'http://localhost:8000'),
+        'api_base_url': os.getenv('API_BASE_URL', 'https://college-design-programs-api.onrender.com'),
         'api_timeout': int(os.getenv('API_TIMEOUT', '30')),
         
         # App Settings
@@ -65,7 +65,7 @@ def load_config() -> Dict[str, Any]:
 
 def get_api_url(endpoint: str) -> str:
     """Get full API URL for an endpoint"""
-    base_url = os.getenv('API_BASE_URL', 'http://localhost:8000')
+    base_url = os.getenv('API_BASE_URL', 'https://college-design-programs-api.onrender.com')
     return f"{base_url.rstrip('/')}/{endpoint.lstrip('/')}"
 
 def get_api_headers() -> Dict[str, str]:
