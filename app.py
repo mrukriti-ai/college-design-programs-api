@@ -5,6 +5,8 @@ Root-level file for easy Streamlit Cloud deployment
 
 import streamlit as st
 import pandas as pd
+import requests
+import json
 
 def main():
     """Main application function"""
@@ -15,6 +17,15 @@ def main():
         page_icon="🎨",
         layout="wide"
     )
+    
+    # API Configuration
+    API_BASE_URL = "https://college-design-programs-api.onrender.com"
+    
+    # Test API connection
+    if test_api_connection(API_BASE_URL):
+        st.success("✅ Connected to API successfully!")
+    else:
+        st.warning("⚠️ API connection failed. Using sample data.")
     
     # Main header
     st.markdown("# 🎨 College Design Programs")
@@ -111,8 +122,17 @@ def show_results():
     """Show search results"""
     st.markdown("### 📋 Search Results")
     
-    # Sample data
-    sample_colleges = [
+    # Try to get data from API first
+    API_BASE_URL = "https://college-design-programs-api.onrender.com"
+    api_data = get_colleges_from_api(API_BASE_URL)
+    
+    if api_data and 'colleges' in api_data:
+        colleges = api_data['colleges']
+        st.info(f"Found {len(colleges)} colleges from API")
+    else:
+        # Fallback to sample data
+        st.info("Using sample data (API not available)")
+        colleges = [
         {
             "name": "Art Institute of Chicago",
             "program": "Graphic Design",
@@ -161,7 +181,7 @@ def show_results():
     ]
     
     # Display results
-    for i, college in enumerate(sample_colleges):
+    for i, college in enumerate(colleges):
         with st.container():
             col1, col2, col3 = st.columns([3, 1, 1])
             
@@ -211,6 +231,29 @@ def show_about():
     - Asia (India, China, Japan, Singapore, etc.)
     - Australia & New Zealand
     """)
+
+def test_api_connection(api_url):
+    """Test if the API is accessible"""
+    try:
+        response = requests.get(f"{api_url}/health", timeout=10)
+        return response.status_code == 200
+    except:
+        return False
+
+def get_colleges_from_api(api_url, filters=None):
+    """Get colleges from the API"""
+    try:
+        if filters:
+            response = requests.get(f"{api_url}/api/colleges/search", params=filters, timeout=10)
+        else:
+            response = requests.get(f"{api_url}/api/colleges", timeout=10)
+        
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return None
+    except:
+        return None
 
 if __name__ == "__main__":
     main()
