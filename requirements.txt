@@ -1,7 +1,7 @@
-streamlit>=1.28.0
-requests>=2.31.0
-pandas>=2.0.0
-plotly>=5.17.0
-numpy>=1.24.0
-sqlalchemy>=2.0.0
-openpyxl>=3.1.0 
+fastapi==0.111.0
+uvicorn[standard]==0.30.0
+SQLAlchemy==2.0.31
+pydantic==2.8.2
+pydantic-settings==2.3.4
+python-multipart==0.0.9
+openpyxl==3.1.5 
