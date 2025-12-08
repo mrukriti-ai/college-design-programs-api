@@ -6,10 +6,13 @@ This file imports and runs the actual Streamlit app from the streamlit_app direc
 import sys
 import os
 
-# Add the project root directory to the Python path
+# Add the project root and streamlit_app directories to the Python path
 project_root = os.path.dirname(os.path.abspath(__file__))
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+streamlit_dir = os.path.join(project_root, "streamlit_app")
+
+for path in (project_root, streamlit_dir):
+    if os.path.isdir(path) and path not in sys.path:
+        sys.path.insert(0, path)
 
 # Import and run the main app
 from streamlit_app.main import main
