@@ -67,10 +67,10 @@ def main():
         # Display current user info if available
         if st.session_state.get('user_profile'):
             st.markdown("### Current Profile")
-            profile = st.session_state.user_profile
-            st.markdown(f"**Name:** {profile.get('name', 'N/A')}")
-            st.markdown(f"**Program:** {profile.get('program_interest', 'N/A')}")
-            st.markdown(f"**Budget:** {profile.get('budget_range', 'N/A')}")
+            user_profile_data = st.session_state.user_profile
+            st.markdown(f"**Name:** {user_profile_data.get('name', 'N/A')}")
+            st.markdown(f"**Program:** {user_profile_data.get('program_interest', 'N/A')}")
+            st.markdown(f"**Budget:** {user_profile_data.get('budget_range', 'N/A')}")
         
         # Display favorites count
         if st.session_state.get('favorites'):
