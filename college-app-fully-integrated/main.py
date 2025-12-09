@@ -10,16 +10,13 @@ from pathlib import Path
 project_root = Path(__file__).resolve().parent
 streamlit_dir = project_root / "streamlit_app"
 
+# Add paths to sys.path
 for path in (streamlit_dir, project_root):
-    if path.is_dir():
+    if path.is_dir() and str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-# Import and run the main app (with fallback if package import fails)
-try:
-    from streamlit_app.main import main
-except ModuleNotFoundError:
-    import main as streamlit_main  # when run inside streamlit_app folder
-    main = streamlit_main.main
+# Import and run the main app
+from streamlit_app.main import main
 
 if __name__ == "__main__":
     main()
