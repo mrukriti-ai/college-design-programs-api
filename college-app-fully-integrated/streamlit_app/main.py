@@ -4,9 +4,9 @@ Main application entry point with navigation and session state management.
 """
 
 import streamlit as st
-from pages import home, profile, results, details, admin
-from utils.session_state import init_session_state
-from utils.config import load_config
+from streamlit_app.pages import home, profile, results, details, admin
+from streamlit_app.utils.session_state import init_session_state
+from streamlit_app.utils.config import load_config
 
 def main():
     """Main application function"""

@@ -4,7 +4,7 @@ Displays welcome message, value proposition, and call-to-action.
 """
 
 import streamlit as st
-from utils.config import PROGRAM_TYPES
+from streamlit_app.utils.config import PROGRAM_TYPES
 
 def show():
     """Display the home page"""

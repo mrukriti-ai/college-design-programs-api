@@ -5,7 +5,7 @@ Provides consistent filtering functionality across the application.
 
 import streamlit as st
 from typing import List, Dict, Any
-from utils.config import PROGRAM_TYPES, BUDGET_RANGES, LOCATIONS
+from streamlit_app.utils.config import PROGRAM_TYPES, BUDGET_RANGES, LOCATIONS
 
 def create_results_filter():
     """Create a results filter component"""

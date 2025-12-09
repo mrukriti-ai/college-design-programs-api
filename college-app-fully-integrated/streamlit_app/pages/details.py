@@ -4,7 +4,7 @@ Shows detailed information about a selected college program.
 """
 
 import streamlit as st
-from utils.session_state import get_selected_college, add_to_favorites, remove_from_favorites, is_favorite
+from streamlit_app.utils.session_state import get_selected_college, add_to_favorites, remove_from_favorites, is_favorite
 
 def show():
     """Display the college details page"""

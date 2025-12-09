@@ -6,7 +6,7 @@ Allows administrators to upload college data and view system status.
 import streamlit as st
 import pandas as pd
 from io import BytesIO
-from utils.config import get_admin_headers
+from streamlit_app.utils.config import get_admin_headers
 
 def show():
     """Display the admin page"""

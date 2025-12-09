@@ -4,9 +4,9 @@ Collects user information and search criteria for college recommendations.
 """
 
 import streamlit as st
-from utils.config import PROGRAM_TYPES, BUDGET_RANGES, LOCATIONS, EDUCATION_LEVELS
-from utils.session_state import update_user_profile, update_search_filters
-from components.forms import create_user_profile_form
+from streamlit_app.utils.config import PROGRAM_TYPES, BUDGET_RANGES, LOCATIONS, EDUCATION_LEVELS
+from streamlit_app.utils.session_state import update_user_profile, update_search_filters
+from streamlit_app.components.forms import create_user_profile_form
 
 def show():
     """Display the profile and search form page"""

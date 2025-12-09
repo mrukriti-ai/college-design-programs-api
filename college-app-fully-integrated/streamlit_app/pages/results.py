@@ -5,12 +5,12 @@ Shows matching colleges with filtering options and college cards.
 
 import streamlit as st
 from typing import List, Dict, Any
-from utils.session_state import (
+from streamlit_app.utils.session_state import (
     get_search_results, get_search_filters, set_selected_college,
     add_to_favorites, remove_from_favorites, is_favorite
 )
-from components.cards import create_college_card
-from components.filters import create_results_filter
+from streamlit_app.components.cards import create_college_card
+from streamlit_app.components.filters import create_results_filter
 
 def show():
     """Display the search results page"""

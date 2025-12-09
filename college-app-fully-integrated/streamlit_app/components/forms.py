@@ -4,7 +4,7 @@ Provides consistent form elements across different pages.
 """
 
 import streamlit as st
-from utils.config import PROGRAM_TYPES, BUDGET_RANGES, LOCATIONS, EDUCATION_LEVELS
+from streamlit_app.utils.config import PROGRAM_TYPES, BUDGET_RANGES, LOCATIONS, EDUCATION_LEVELS
 
 def create_user_profile_form():
     """Create a user profile form component"""
