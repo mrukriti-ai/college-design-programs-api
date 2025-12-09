@@ -6,6 +6,7 @@ Collects user information and search criteria for college recommendations.
 import streamlit as st
 from streamlit_app.utils.config import PROGRAM_TYPES, BUDGET_RANGES, LOCATIONS, EDUCATION_LEVELS
 from streamlit_app.utils.session_state import update_user_profile, update_search_filters
+from streamlit_app.utils.api_service import save_user_profile
 from streamlit_app.components.forms import create_user_profile_form
 
 def show():
@@ -98,7 +99,7 @@ def show():
                 'program_interest': program_interest,
                 'budget_range': budget_range,
                 'location_preference': location_preference,
-                'degree_level': degree_level,
+                'degree_level': degree_level if degree_level else None,
                 'include_international': include_international
             }
             
@@ -109,12 +110,22 @@ def show():
                 'location': location_preference
             }
             
-            # Update session state
-            update_user_profile(user_profile)
-            update_search_filters(search_filters)
+            # Save to database via API
+            with st.spinner("Saving your profile..."):
+                saved_profile = save_user_profile(user_profile)
             
-            # Show success message
-            st.success("Profile saved! Navigate to '📋 Results' to see your matching programs.")
+            if saved_profile:
+                # Update session state
+                update_user_profile(user_profile)
+                update_search_filters(search_filters)
+                
+                # Show success message
+                st.success("✅ Profile saved to database! Navigate to '📋 Results' to see your matching programs.")
+            else:
+                # Still update session state even if API fails (fallback)
+                update_user_profile(user_profile)
+                update_search_filters(search_filters)
+                st.warning("⚠️ Profile saved locally. Could not connect to database. You can still use the app.")
             
             # Display summary
             st.markdown("### Your Search Criteria")

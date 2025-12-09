@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import health, colleges, admin
+from api.routes import health, colleges, admin, user_profiles
 from database.database import Base, engine
 
 # Create tables on startup if not exist
@@ -26,7 +26,8 @@ app.add_middleware(
 # Routers
 app.include_router(health.router, prefix="/api", tags=["health"]) 
 app.include_router(colleges.router, prefix="/api/colleges", tags=["colleges"]) 
-app.include_router(admin.router, prefix="/api/admin", tags=["admin"]) 
+app.include_router(admin.router, prefix="/api/admin", tags=["admin"])
+app.include_router(user_profiles.router, prefix="/api/user-profiles", tags=["user-profiles"]) 
 
 
 @app.get("/", tags=["health"]) 

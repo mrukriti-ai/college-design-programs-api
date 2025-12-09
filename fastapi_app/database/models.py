@@ -36,6 +36,8 @@ class UserProfile(Base):
     program_interest = Column(String, nullable=False)
     budget_range = Column(String, nullable=False)
     location_preference = Column(String, nullable=False)
+    degree_level = Column(Text, nullable=True)  # JSON string for list of degree levels
+    include_international = Column(String, nullable=True, default="true")  # Store as string
     created_at = Column(DateTime, server_default=func.current_timestamp())
 
 class UserFavorite(Base):
